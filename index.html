@@ -101,6 +101,323 @@ src="https://www.youtube.com/embed/6p0SB4O4qgE"
 title="Fashion Show"
 allowfullscreen>
 </iframe>
+    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ffe6f0, #f5e6ff);
+    color:#333;
+}
+
+/* Header */
+header{
+    background-color:#800040;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+header h1{
+    font-size:40px;
+}
+
+header p{
+    margin-top:10px;
+}
+
+/* Navigation */
+nav{
+    background-color:#cc0066;
+    padding:15px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    font-size:18px;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+/* Sections */
+section{
+    padding:30px;
+}
+
+h2{
+    text-align:center;
+    color:#800040;
+    margin-bottom:20px;
+}
+
+/* Product Cards */
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Image Grid */
+.gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:15px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* Video Grid */
+.video-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:15px;
+}
+
+.video-grid iframe{
+    width:100%;
+    height:250px;
+    border-radius:10px;
+}
+
+/* Table */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+caption{
+    font-size:28px;
+    font-weight:bold;
+    background:#800040;
+    color:white;
+    padding:15px;
+}
+
+th{
+    background:#cc0066;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+}
+
+tr:nth-child(even){
+    background:#ffe6f0;
+}
+
+tr:nth-child(odd){
+    background:#f5ccff;
+}
+
+/* Contact */
+.contact{
+    background:white;
+    text-align:center;
+    border-radius:10px;
+    padding:20px;
+}
+
+/* Footer */
+footer{
+    background:#800040;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Kira Kouture Fashion</h1>
+    <p>Your Home of Fashion, Beauty and Style</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="home">
+    <h2>Welcome to Kira Kouture</h2>
+    <p align="center">
+        Discover elegant fashion collections, beauty products,
+        accessories and styling services designed for modern women.
+    </p>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p align="center">
+        Kira Kouture Fashion provides stylish outfits, beauty products,
+        handbags and accessories that help customers express their unique style.
+    </p>
+</section>
+
+<section id="products">
+    <h2>Featured Collections</h2>
+
+    <div class="products">
+        <div class="card">
+            <h3>Women's Wear</h3>
+            <p>Elegant dresses and trendy outfits.</p>
+        </div>
+
+        <div class="card">
+            <h3>Beauty Products</h3>
+            <p>Premium makeup and skincare essentials.</p>
+        </div>
+
+        <div class="card">
+            <h3>Accessories</h3>
+            <p>Luxury handbags, jewelry and watches.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Fashion Product Catalogue</h2>
+
+    <table>
+        <caption>Kira Kouture Fashion Collection</caption>
+
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price (KES)</th>
+            <th>Status</th>
+        </tr>
+
+        <tr>
+            <td>F001</td>
+            <td>Evening Dress</td>
+            <td>Women's Wear</td>
+            <td>5,000</td>
+            <td>Available</td>
+        </tr>
+
+        <tr>
+            <td>F002</td>
+            <td>Luxury Handbag</td>
+            <td>Accessories</td>
+            <td>3,500</td>
+            <td>Available</td>
+        </tr>
+
+        <tr>
+            <td>F003</td>
+            <td>Makeup Kit</td>
+            <td>Beauty</td>
+            <td>2,500</td>
+            <td>Available</td>
+        </tr>
+
+        <tr>
+            <td>F004</td>
+            <td>Designer Heels</td>
+            <td>Footwear</td>
+            <td>4,000</td>
+            <td>Limited Stock</td>
+        </tr>
+
+        <tr>
+            <td>F005</td>
+            <td>Fashion Sunglasses</td>
+            <td>Accessories</td>
+            <td>1,500</td>
+            <td>Available</td>
+        </tr>
+    </table>
+</section>
+
+<section id="gallery">
+    <h2>Fashion Gallery</h2>
+
+    <div class="gallery-grid">
+
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600">
+
+        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600">
+
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600">
+
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600">
+
+    </div>
+</section>
+
+<section id="videos">
+    <h2>Fashion Videos</h2>
+
+    <div class="video-grid">
+
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact">
+        <p>Email: info@kirakouture.com</p>
+        <p>Phone: +254 700 123 456</p>
+        <p>Location: Nairobi, Kenya</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Kira Kouture Fashion. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
