@@ -19,6 +19,31 @@ width:300px;
 ">
 
     <h2>Kira Kouture Fashion</h2>
+
+    <form>
+        <input type="text" placeholder="Name" required><br><br>
+
+        <input type="email" placeholder="Email" required><br><br>
+
+        <textarea placeholder="Message" required></textarea><br><br>
+
+        <button type="submit">Submit</button>
+        <button type="button" onclick="closePopup()">Close</button>
+    </form>
+
+</div>
+
+<script>
+function openPopup() {
+    document.getElementById("popup").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+    <h2>Kira Kouture Fashion</h2>
 </head>
     <link rel="stylesheet" href="style.css">
 </head>
