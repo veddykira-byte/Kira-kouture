@@ -419,6 +419,34 @@ footer{
 <footer>
     <p>&copy; 2026 Kira Kouture Fashion. All Rights Reserved.</p>
 </footer>
+  <section id="registration">
+    <h2>Customer Registration Form</h2>
+
+    <form onsubmit="return validateForm()">
+
+        <label>Name:</label>
+        <input type="text" id="name"
+        value="Veddy Kira">
+
+        <label>Email:</label>
+        <input type="text" id="email"
+        value="veddykira20@gmail.com">
+
+        <label>Phone Number:</label>
+        <input type="text" id="phone"
+        value="0712345678">
+
+        <label>Gender:</label>
+        <select id="gender">
+            <option value="">Select Gender</option>
+            <option selected>Female</option>
+            <option>Male</option>
+        </select>
+
+        <button type="submit">Register</button>
+
+    </form>
+</section>  
 
 </body>
 </html>
