@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>Kira Kouture & Fashion</>
+    <title>Kira Kouture & Fashion</title>
 <button onclick="openPopup()">Contact Us</button>
 
 <div id="popup" style="
@@ -462,23 +462,53 @@ footer{
 <footer>
     <p>&copy; 2026 Kira Kouture Fashion. All Rights Reserved.</p>
 </footer>
-  <section id="registration">
-    <h2>Customer Registration Form</>
-        <form onsubmit="return validateForm()">
+  
+</script>
+    <section id="registration">
+    <h2>Customer Registration Form</h2>
 
-    Name:<br>
-    <input type="text" id="name"><br><br>
+    <form onsubmit="return validateForm()">
 
-    Email:<br>
-    <input type="email" id="email"><br><br>
+        Name:<br>
+        <input type="text" id="name"><br><br>
 
-    Message:<br>
-    <textarea id="message"></textarea><br><br>
+        Email:<br>
+        <input type="email" id="email"><br><br>
 
-    <input type="submit" value="Submit">
+        Message:<br>
+        <textarea id="message"></textarea><br><br>
 
- </form>
-        function validateForm() {
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <p id="error"></p>
+</section>
+
+<script>
+<section id="registration">
+    <h2>Customer Registration Form</h2>
+
+    <form onsubmit="return validateForm()">
+
+        Name:<br>
+        <input type="text" id="name"><br><br>
+
+        Email:<br>
+        <input type="email" id="email"><br><br>
+
+        Message:<br>
+        <textarea id="message"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <p id="error"></p>
+</section>
+
+<script>
+function validateForm() {
 
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
@@ -507,6 +537,7 @@ footer{
 
     return false;
 }
+
 
 <script>
 
