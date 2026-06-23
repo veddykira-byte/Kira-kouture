@@ -3,52 +3,52 @@
 <head>
 
     <title>Kira Kouture & Fashion</title>
-<button onclick="openPopup()">Contact Us</button>
+</head>
 
-<div id="popup" style="
-display:none;
+<body>
+    <div id="welcomePopup" style="
+display:block;
 position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 background:white;
-padding:20px;
-border:2px solid black;
-box-shadow:0 0 10px gray;
-width:300px;
+padding:25px;
+border:3px solid #cc0066;
+border-radius:10px;
+box-shadow:0 0 15px gray;
+width:350px;
+text-align:center;
+z-index:1000;
 ">
 
-    <h2>Kira Kouture Fashion</h2>
+    <h2>Welcome to Kira Kouture Fashion!</h2>
 
-    <form>
-        <input type="text" placeholder="Name" required><br><br>
+    <p>
+        🎉 Black Friday Sale is Here! 🎉
+    </p>
 
-        <input type="email" placeholder="Email" required><br><br>
+    <p>
+        Enjoy up to <strong>50% OFF</strong> on selected fashion collections,
+        accessories, handbags, and beauty products.
+    </p>
 
-        <textarea placeholder="Message" required></textarea><br><br>
+    <p>
+        Shop now and upgrade your style for less!
+    </p>
 
-        <button type="submit">Submit</button>
-        <button type="button" onclick="closePopup()">Close</button>
-    </form>
+    <button onclick="closeWelcomePopup()">
+        Shop Now
+    </button>
 
 </div>
 
 <script>
-function openPopup() {
-    document.getElementById("popup").style.display = "block";
-}
-
-function closePopup() {
-    document.getElementById("popup").style.display = "none";
+function closeWelcomePopup() {
+    document.getElementById("welcomePopup").style.display = "none";
 }
 </script>
-
-    <h2>Kira Kouture Fashion</h2>
-</head>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
+</body>
 
 <h1>Kira Kouture & Fashion</h1>
 
