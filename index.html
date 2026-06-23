@@ -2,22 +2,23 @@
 <html>
 <head>
 
-    <title>Kira Kouture & Fashion</title>
+    <title>Kira Kouture & Fashion</>
+<button onclick="openPopup()">Contact Us</button>
 
-    <a href="#" onclick="welcomePopup()">Home</a>
+<div id="popup" style="
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:20px;
+border:2px solid black;
+box-shadow:0 0 10px gray;
+width:300px;
+">
 
-<script>
-function welcomePopup() {
-    window.open(
-        "",
-        "Welcome",
-        "width=400,height=200"
-    ).document.write(
-        "<h2>Welcome to Kira Kouture Fashion!</h2><p>Explore our latest styles and trends.</p>"
-    );
-}
-</script>
-
+    <h2>Kira Kouture Fashion</h2>
 </head>
     <link rel="stylesheet" href="style.css">
 </head>
