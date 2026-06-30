@@ -510,38 +510,141 @@ footer{
 <script>
 function validateForm() {
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#ffe4ec;
+    min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    padding:2rem;
+  }
+  .card{
+    width:100%; max-width:400px;
+    background:#ffffff;
+    border:1px solid #f6c6d6;
+    border-radius:8px;
+    padding:2rem;
+  }
+  h2{ margin-bottom:1.5rem; text-align:center; color:#c2185b; }
+  .form-group{ margin-bottom:1.2rem; }
+  label{ display:block; font-size:.85rem; margin-bottom:.4rem; color:#555; }
+  input{
+    width:100%; padding:.65rem .75rem;
+    border:1px solid #f3b6c9; border-radius:5px;
+    font-size:.95rem;
+  }
+  input:focus{ outline:none; border-color:#e91e63; }
+  input.invalid{ border-color:#c0463f; }
+  .error-msg{ font-size:.75rem; color:#c0463f; min-height:1.1em; margin-top:.3rem; }
+  button{
+    width:100%; padding:.8rem; margin-top:.5rem;
+    background:#e91e63; color:#fff; border:none; border-radius:5px;
+    font-size:.9rem; cursor:pointer;
+  }
+  button:hover{ background:#c2185b; }
+  .success-msg{
+    display:none; text-align:center; color:#c2185b;
+    font-size:.9rem; margin-top:1rem;
+  }
+  .success-msg.show{ display:block; }
+</style>
+</head>
+<body>
 
-    if (name === "") {
-        document.getElementById("error").innerHTML =
-        "Please enter your name.";
-        return false;
-    }
+<div class="card">
+  <h2>Registration Form</h2>
+  <form id="registrationForm" novalidate>
+    <div class="form-group">
+      <label for="formId">Form ID</label>
+      <input type="text" id="formId" placeholder="e.g. REG-001">
+      <span class="error-msg" id="errFormId"></span>
+    </div>
 
-    if (email === "") {
-        document.getElementById("error").innerHTML =
-        "Please enter your email.";
-        return false;
-    }
+    <div class="form-group">
+      <label for="fullName">Name</label>
+      <input type="text" id="fullName" placeholder="Your full name">
+      <span class="error-msg" id="errName"></span>
+    </div>
 
-    if (message === "") {
-        document.getElementById("error").innerHTML =
-        "Please enter your message.";
-        return false;
-    }
+    <div class="form-group">
+      <label for="gmail">Gmail</label>
+      <input type="email" id="gmail" placeholder="you@gmail.com">
+      <span class="error-msg" id="errGmail"></span>
+    </div>
 
-    document.getElementById("error").innerHTML =
-    "Form submitted successfully!";
-
-    return false;
-}
-
+    <button type="submit">Register</button>
+    <p class="success-msg" id="successMsg">Registration successful!</p>
+  </form>
+</div>
 
 <script>
+  const form = document.getElementById('registrationForm');
+  const formIdInput = document.getElementById('formId');
+  const nameInput = document.getElementById('fullName');
+  const gmailInput = document.getElementById('gmail');
+  const errFormId = document.getElementById('errFormId');
+  const errName = document.getElementById('errName');
+  const errGmail = document.getElementById('errGmail');
+  const successMsg = document.getElementById('successMsg');
 
-</section>  
+  function setState(input, errEl, valid, msg){
+    input.classList.toggle('invalid', !valid);
+    errEl.textContent = msg;
+  }
 
+  function validateFormId(){
+    const v = formIdInput.value.trim();
+    if(!v){ setState(formIdInput, errFormId, false, 'Please enter a Form ID.'); return false; }
+    setState(formIdInput, errFormId, true, '');
+    return true;
+  }
+
+  function validateName(){
+    const v = nameInput.value.trim();
+    if(!v){ setState(nameInput, errName, false, 'Please enter your name.'); return false; }
+    if(v.length < 2 || !/^[a-zA-Z\s'-]+$/.test(v)){
+      setState(nameInput, errName, false, 'Name can only contain letters.');
+      return false;
+    }
+    setState(nameInput, errName, true, '');
+    return true;
+  }
+
+  function validateGmail(){
+    const v = gmailInput.value.trim();
+    if(!v){ setState(gmailInput, errGmail, false, 'Please enter your Gmail address.'); return false; }
+    if(!/^[^\s@]+@gmail\.com$/i.test(v)){
+      setState(gmailInput, errGmail, false, 'Please enter a valid @gmail.com address.');
+      return false;
+    }
+    setState(gmailInput, errGmail, true, '');
+    return true;
+  }
+
+  formIdInput.addEventListener('blur', validateFormId);
+  nameInput.addEventListener('blur', validateName);
+  gmailInput.addEventListener('blur', validateGmail);
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const ok1 = validateFormId();
+    const ok2 = validateName();
+    const ok3 = validateGmail();
+    if(!ok1 || !ok2 || !ok3) return;
+
+    successMsg.classList.add('show');
+    form.reset();
+    [formIdInput, nameInput, gmailInput].forEach(i => i.classList.remove('invalid'));
+    setTimeout(() => successMsg.classList.remove('show'), 3000);
+  });
+</script>
 </body>
 </html>
+
